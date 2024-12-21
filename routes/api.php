@@ -45,6 +45,7 @@ Route::prefix('admin')->group(function () {
     Route::apiResource('product', ProductController::class);
     Route::apiResource('category-article', CategoryArticleController::class);
     Route::apiResource('article', ArticleController::class);
+    Route::get('user', AuthenticationController::class . '@getData');
 })->middleware('auth:sanctum');
 
 Route::prefix('pages')->group(function () {

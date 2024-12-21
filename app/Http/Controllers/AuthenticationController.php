@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 class AuthenticationController extends Controller
 {
 
+    public function getData()
+    {
+        $user = User::all();
+        return response()->json([
+            'data' => $user
+        ], 200);
+    }
+
     public function register(Request $request)
     {
         $validated = $request->validate([
